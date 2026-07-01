@@ -1,0 +1,212 @@
+<DOCTYPE hmtl>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+            <title>EcoRaíz</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+            <link rel="stylesheet" href="./CSS/estilos_css.css">
+        </head>
+        <body>
+            <!-- Encabezado con navegación -->
+            <header class="header">
+                <div class="logo-container">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/logo/green-tree-ver-2.png" alt="Logo de EcoRaíz" class="logo">
+                    </a>
+                </div>
+    
+                <button class="menu-toggle-btn d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav class="main-nav collapse d-md-flex" id="navbarNav">
+                    <ul class="main-nav-list">
+                        <li class="main-nav-item"><a class="main-nav-link" href="index.html">Inicio</a></li>
+                        <li class="main-nav-item"><a class="main-nav-link" href="nosotros.html">Nosotros</a></li>
+            
+                        <li class="main-nav-item dropdown">
+                            <a class="main-nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Programas
+                            </a>
+                            <ul class="dropdown-menu sub-nav-list" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item sub-nav-link" href="./programas.html">Energías limpias</a></li>
+                                <li><a class="dropdown-item sub-nav-link" href="./Educacion-ambiental-programa.html">Educación ambiental</a></li>
+                                <li><a class="dropdown-item sub-nav-link" href="./conservacion-ecosistema-programa.html">Conservación de ecosistemas</a></li>
+                            </ul>
+                        </li>
+            
+                        <li class="main-nav-item"><a class="main-nav-link" href="contactos.html">Contactos</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <!-- Sección hero -->
+                <section class="section-hero" id="Bienvenida">
+                    <div class="section-content">
+                        <div class="hero-details">
+                            <h1 class="title">Bienvenidos a EcoRaíz</h1>
+                            <p class="description">En EcoRaíz, nos dedicamos a promover la sostenibilidad y el cuidado del medio ambiente a través de diversas iniciativas y programas educativos. 
+                            Nuestro objetivo es crear conciencia sobre la importancia de preservar nuestros recursos naturales y fomentar prácticas ecológicas en nuestra comunidad.</p>
+                            <div class="buttons">
+                                <a href="nosotros.html" class="button-about-us">Conocé más</a>
+                            </div>
+                        </div>
+    
+                        <div class="hero-image-wrapper auto-rotate">
+                            <img src="img/paisajes/Vector 3d.png" alt="Imagen del planeta" class="hero-image"        >
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección accion -->
+                <section id="Acción" class="section-middle">
+                    <div class="section-content-action">
+                        <h2>Defendamos el futuro del planeta</h2>
+                        <p>Luchamos contra la destrucción de nuestros bosques, la pérdida de biodiversidad y las distintas formas de contaminación que amenazan los ecosistemas de Argentina. Creemos que proteger el ambiente no solo significa conservar la naturaleza, sino también garantizar una mejor calidad de vida para las generaciones presentes y futuras. <br><br>
+                        Promovemos la restauración de ecosistemas degradados, el uso responsable de los recursos naturales y la adopción de energías limpias como herramientas fundamentales para construir un modelo de desarrollo sostenible. A través de la educación ambiental, la investigación y la participación ciudadana, buscamos generar conciencia sobre la importancia de preservar la riqueza natural del país e impulsar acciones concretas que contribuyan a un futuro más equilibrado y respetuoso con el planeta.</p>
+                    </div>
+                </section>
+
+                <!-- Sección problematicas -->
+                <section id="Problemáticas" class="section-problems">
+                    <h2 class="section-title">Las problemáticas ambientales en Argentina</h2>
+
+                    <article class="minera problems">
+                        <div class="problem-content">
+                            <h3>Minería a cielo abierto</h3>
+                            <p>La minería a cielo abierto es una de las actividades extractivas con mayor impacto sobre el medioambiente. Para acceder a los minerales, se remueven grandes extensiones de suelo y vegetación, lo que altera los paisajes naturales y provoca la pérdida de hábitats para numerosas especies. <br>
+                            Además, el uso intensivo de agua y de sustancias químicas durante el proceso de extracción puede contaminar ríos, arroyos y napas subterráneas, afectando tanto a los ecosistemas como a las comunidades cercanas.</p>
+                            <a href="#" class="btn-problem">Leer más</a>
+                        </div>
+                        <div class="problem-image">
+                            <img src="img/problematicas/heavy-machinery-used-construction-industry-engineering.jpg" alt="Explotación minera a cielo abierto">
+                        </div>
+                    </article>
+
+                    <article class="marina problems">
+                        <div class="problem-content">
+                            <h3>Contaminación marina</h3>
+                            <p>Los ecosistemas marinos enfrentan diversas amenazas, entre ellas la contaminación por residuos, plásticos, derrames de hidrocarburos y las actividades de exploración y explotación de recursos en el mar. Estas pueden alterar los hábitats naturales y afectar a especies como peces, aves y mamíferos marinos.<br>
+                            Promovemos la protección del Mar Argentino mediante la investigación, la concientización y el impulso de prácticas responsables que minimicen los impactos ambientales.</p>
+                            <a href="#" class="btn-problem">Leer más</a>
+                        </div>
+                        <div class="problem-image">
+                            <img src="img/problematicas/scene-with-photorealistic-logistics-operations-proceedings.jpg" alt="Contaminación marina de mineras offshore">
+                        </div>
+                    </article>
+
+                    <article class="deforestacion problems">
+                        <div class="problem-content">
+                            <h3>Pérdida de biodiversidad</h3>
+                            <p>La biodiversidad es fundamental para el equilibrio de los ecosistemas y el bienestar de las personas. Sin embargo, la deforestación, el cambio climático, la contaminación y la expansión de las actividades humanas están reduciendo los hábitats naturales y poniendo en riesgo a numerosas especies nativas de Argentina.<br>
+                            Nuestra organización impulsa acciones de conservación, restauración de ecosistemas y educación ambiental para proteger la flora y la fauna autóctonas.</p>
+                            <a href="#" class="btn-problem">Leer más</a>
+                        </div>
+                        <div class="problem-image">
+                            <img src="img/problematicas/forest-fire-devastation-scorched-earth.jpg" alt="Deforestación en Argentina">
+                        </div>
+                    </article>
+                </section>  
+
+                <!-- Sección programas -->
+                <section id="Programas" class="section-programs-wrapper">
+                    <h2 class="section-title">Nuestros programas</h2>
+                    <div class="programs-container">
+                        <div class="program-card card-energia">
+                            <div class="card-inner">
+                                <div class="card-image-wrapper">
+                                    <img src="img/programas/person-near-alternative-energy-plant.jpg" alt="Panel Solar" class="card-img">
+                                </div>
+                                <h3>Energías limpias</h3>
+                                <p>Fomentamos el uso e instalación de energías renovables para mitigar los efectos del cambio climático.</p>
+                                <a href="./programas.html" class="btn-card">Ver programa</a>
+                            </div>
+                        </div>
+
+                        <div class="program-card card-educacion">
+                            <div class="card-inner">
+                                <div class="card-image-wrapper">
+                                <img src="img/programas/sister-brother-watering-seeds-home.jpg" alt="Niños plantando" class="card-img">
+                                </div>
+                                <h3>Educación ambiental</h3>
+                                <p>Talleres y capacitaciones en escuelas y comunidades para adoptar hábitos sostenibles.</p>
+                                <a href="./Educacion-ambiental-programa.html" class="btn-card">Ver programa</a>
+                            </div>
+                        </div>
+
+                        <div class="program-card card-conservacion">
+                            <div class="card-inner">
+                                <div class="card-image-wrapper">
+                                    <img src="img/programas/paisaje1.jpg" alt="Bosque nativo" class="card-img">
+                                </div>
+                                <h3>Conservación de ecosistemas</h3>
+                                <p>Proyectos de reforestación activa y preservación de reservas naturales nativas.</p>
+                                <a href="./conservacion-ecosistema-programa.html" class="btn-card">Ver programa</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Como ayudar -->
+                <section id="ComoAyudar" class="section-help">
+                    <div class="help-content">
+                        <h2>¿Cómo podés ayudar?</h2>
+                        <p>Sumate como voluntario, difundí nuestras campañas o participá en nuestras actividades locales.</p>
+                        <a href="contactos.html" class="btn-problem">Quiero sumarme</a>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Pie de la Pagina -->
+            <footer>
+                <div class="footer-wrap"> <div class="footer-col-1"> <img src="img/logo/green-tree-ver-2.png" class="footer-logo" alt="Logo de EcoRaíz">
+                        <p>Seguí nuestras redes sociales para ver mas de nuestros contenidos y publicaciones.</p>
+                    </div>
+                    <div class="footer-col-2"> <h3>Contenidos</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="programas.html">Programas</a></li>
+                            <li><a href="contactos.html">Contactos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-3"> <h3>Sobre nosotros</h3>
+                        <ul>
+                            <li><a href="tel:+541123473476">+541123473476</a></li>
+                            <li><a href="mailto:info@manos-verdes.org">info@manos-verdes.org</a></li>
+                            <li><address>Av.castillo del papa 353, Buenos Aires, Argentina</address></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4"> <h3>Escribinos</h3>
+                        <form>
+                            <i class="far fa-envelope"></i>
+                            <input type="email" placeholder="Ingresa tu email" required>
+                            <button><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-2">
+                    <p>Copyright &copy; 2026. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+    </html>
+
+
+
+
+
+                       

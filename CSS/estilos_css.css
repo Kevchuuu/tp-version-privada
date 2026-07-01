@@ -1,0 +1,887 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+/* body */
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f5;
+}
+
+
+
+
+
+/* variables */
+
+:root{
+
+    /* Colores */
+    --negro: #000;
+    --gris-oscuro: #222222d0;
+    --blanco: #fff;
+    --verde-1: #48a179;
+    --verde-2: #2c5a45;
+    --verde-3: #20ca9ac3;
+    --verde-4: #347f7f;
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font weight */
+    --font-wight-normal: 400;
+    --font-wight-medium: 500;
+    --font-wight-semibold: 600;
+    --font-wight-bold: 700;
+
+    /* Radio del Brode*/
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+    
+    /* Site max width */
+    --site-max-width: 1300px;
+}
+
+/* logo barra de navegación */
+.logo{
+    max-height: 4rem; 
+    width: auto;       
+    display: flex;
+    margin-left: 20%;
+    margin-top: 1%;
+}
+
+/* listas*/
+
+ul{
+    list-style: none;
+}
+
+/* botones */
+
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* imagen del hero */
+img {
+    width: 100%;
+}
+
+/* Encabezado y barra de navegacion */
+header {
+    width: calc(100% - 30px); 
+    height: 10vh; 
+    background: linear-gradient(180deg, #080808da, #121514, #3a3e3e); 
+    background-size: 300% 300%;
+    border-radius: var(--border-radius-m); 
+    color: var(--blanco); 
+    margin: 10px 15px; 
+    position: fixed;  
+    display: flex; 
+    align-items: center; 
+    z-index: 1000; 
+    justify-content: space-between; 
+    padding: 0 50px; 
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+.logo {
+    max-height: 4rem; 
+    width: auto;       
+    display: block;
+}
+
+/* Botón hamburguesa estilizado */
+.menu-toggle-btn {
+    display: none; /* Oculto en escritorio */
+    font-size: 1.5rem;
+    color: var(--blanco);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+header .main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .main-nav-list {
+    display: flex;
+    gap: 10px;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.main-nav .main-nav-list .main-nav-link {
+    padding: 10px 18px;
+    font-size: var(--font-size-m);
+    color: var(--blanco);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.main-nav .main-nav-list .main-nav-link:hover,
+.main-nav .main-nav-list .dropdown-toggle:focus {
+    color: var(--blanco);
+    background: var(--verde-3);
+}
+
+/* =======================================================
+   ESTILOS DEL DROPDOWN (Menú Desplegable)
+   ======================================================= */
+/* Cuadro flotante del Dropdown en Escritorio */
+.main-nav .dropdown-menu {
+    /* Mismo degradado exacto de tu navbar principal */
+    background: linear-gradient(170deg, #080808da, #121514, #3a3e3e); 
+    background-size: 300% 300%;
+    /* Mismo radio de borde redondeado de tu web */
+    border-radius: var(--border-radius-m);
+    margin-top: 15px; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+/* Links individuales dentro del dropdown */
+.main-nav .dropdown-item {
+    color: var(--blanco);
+    font-size: var(--font-size-m);
+    padding: 10px 24px;
+    background: transparent;
+    transition: 0.3s ease;
+}
+
+/* Hover dentro del dropdown */
+.main-nav .dropdown-item:hover {
+    background-color: var(--verde-3);
+    color: var(--blanco);
+    border-radius: var(--border-radius-m);
+    width: 100%;
+}
+
+/* =======================================================
+   MEDIA QUERY: Comportamiento Responsive (Celulares/Tablets)
+   ======================================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 0 30px;
+    }
+
+    .menu-toggle-btn {
+        display: block; 
+    }
+
+    header .main-nav.collapse:not(.show) {
+        display: none;
+    }
+
+    /* Caja de la Hamburguesa Abierta */
+    header .main-nav.show {
+        display: flex;
+        position: absolute;
+        top: 105%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(45deg, #080808f2, #121514ef, #3a3e3ee6);
+        backdrop-filter: blur(10px);
+        border-radius: var(--border-radius-m);
+        padding: 25px 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-nav .main-nav-list {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-nav .main-nav-list .main-nav-item {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Links principales en celular */
+    .main-nav .main-nav-list .main-nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* EL DROPDOWN ADENTRO DE LA HAMBURGUESA (Diseño Corregido) */
+    .main-nav .dropdown-menu.show {
+        position: static; /* Resetea el flotado de Bootstrap para expandir el menú */
+        transform: none;
+        float: none;
+        width: 100%; /* Mismo ancho exacto que los botones principales */
+        background: linear-gradient(100deg, #080808f2, #121514ef, #3a3e3ee6);
+        border-radius: var(--border-radius-m); /* Redondeado idéntico */
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Sombra interna para dar profundidad */
+        margin-top: 8px;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Sublinks de Programas en celular */
+    .main-nav .dropdown-item {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        margin: 4px 0;
+        border-radius: var(--border-radius-m); /* Sub-botones ovalados */
+        font-size: calc(var(--font-size-m) * 0.9);
+    }
+    
+    /* Pequeño ajuste para la flechita del dropdown en mobile */
+    .dropdown-toggle::after {
+        margin-left: 8px;
+        vertical-align: middle;
+    }
+}
+
+/* hero - index*/
+
+.section-hero {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #16271f, #3b8764, #27b7be);
+    background-size: 300% 300%;
+    animation: color 8s ease-in-out infinite;
+    display: flex;
+    justify-content: center; /* Centra el bloque interno horizontalmente */
+    align-items: center; /* Centra el bloque interno verticalmente */
+}
+
+@keyframes color {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+/* Contenedor interno: Ahora controla el espacio céntrico real */
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinea texto e imagen juntos en el centro */
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 0 40px; /* Margen de seguridad para que no toque los bordes de la pantalla */
+    gap: 100px; /* Separación fija y elegante entre el texto y la imagen */
+    flex-wrap: wrap; /* Permite que en celulares la imagen baje de forma responsive */
+}
+
+/* Bloque de texto equilibrado */
+.section-hero .hero-details {
+    flex: 1;
+    max-width: 550px; /* Evita que el texto se desparrame hacia la izquierda */
+    color: var(--blanco);
+}
+
+.section-hero .hero-details .title {
+    margin-top: 8px;
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-wight-bold);
+    color: var(--blanco);
+    line-height: 1.2;
+}
+
+.section-hero .hero-details .description {
+    max-width: 100%; /* Corregido de 160% a 100% para respetar su columna */
+    margin: 24px 0 40px;
+    font-size: var(--font-size-m);
+    line-height: 1.6;
+}
+
+.section-hero .hero-details .buttons .button-about-us {
+   padding: 10px 26px;
+   border: 2px solid transparent;
+   color: var(--blanco);
+   background-color: var(--gris-oscuro);
+   border-radius: var(--border-radius-m);
+   font-weight: var(--font-wight-medium);
+   transition: 0.3s ease;
+   text-decoration: none;
+   filter: drop-shadow(5px 5px 10px black);
+}
+
+.section-hero .hero-details .buttons .button-about-us:hover {
+   border-color: var(--blanco);
+   color: var(--blanco);
+   background: transparent;
+   text-decoration: none;
+}
+
+/* Bloque de la imagen equilibrado */
+.section-hero .hero-image-wrapper {
+    flex: 0 0 420px; /* Bajado ligeramente para mejorar la proporción con el texto */
+    max-width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.section-hero .hero-image-wrapper .hero-image {
+    filter: drop-shadow(5px 5px 10px black);
+    width: 150%;
+    height: auto;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    
+    /* 1. Cambiamos height fijo por min-height para que la sección se estire si el texto es largo */
+    .section-hero {
+        height: auto; 
+        min-height: 100vh;
+        padding-top: 14vh; /* Espacio extra arriba para que el menú fijo no tape el título "EcoRaíz" */
+        padding-bottom: 40px;
+    }
+
+    /* 2. Cambiamos el orden visual: primero el texto, abajo la imagen */
+    .section-hero .section-content {
+        flex-direction: column;
+        gap: 40px; /* Reducimos el espacio exagerado entre el botón y la imagen */
+        text-align: center; /* Centramos el texto para una estética mobile clásica */
+    }
+
+    /* 3. Permitimos que el bloque de texto use el ancho disponible en el centro */
+    .section-hero .hero-details {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el botón horizontalmente en móviles */
+    }
+
+    /* 4. Achicamos un poco la imagen en celulares para que no ocupe toda la pantalla */
+    .section-hero .hero-image-wrapper {
+        flex: 0 0 auto;
+        width: 80%; /* Ocupa el 80% del ancho del celular */
+        max-width: 300px;
+    }
+}
+
+
+/* main */
+main{
+    background-color: #f4f7f5;
+}
+
+
+/* =======================================================
+   REGLAS GENERALES COMPARTIDAS
+   ======================================================= */
+.section-title {
+    text-align: center;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-wight-bold);
+    color: var(--gris-oscuro);
+    margin-bottom: 60px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--verde-1);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* =======================================================
+   SECCIÓN DE ACCIÓN (Contenido centrado y elegante)
+   ======================================================= */
+.section-middle {
+    background-color: #f4f7f5; /* Un fondo blanco-verdoso ecológico muy sutil */
+    padding: 90px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-content-action {
+    max-width: 850px; /* Evita que las líneas sean infinitas, mejorando la lectura */
+    text-align: center;
+}
+
+.section-content-action h2 {
+    font-size: var(--font-size-xl);
+    color: var(--verde-2);
+    margin-bottom: 25px;
+    font-weight: var(--font-wight-bold);
+}
+
+.section-content-action p {
+    font-size: var(--font-size-m);
+    color: #444;
+    line-height: 1.8;
+}
+
+/* =======================================================
+   SECCIÓN DE PROBLEMÁTICAS (Texto Izq - Imagen Der constante)
+   ======================================================= */
+.section-problems {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    padding: 100px 40px;
+}
+
+.problems {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 100px;
+}
+
+.problems:last-child {
+    margin-bottom: 0;
+}
+
+.problem-content, .problem-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.problem-content h3 {
+    font-size: calc(var(--font-size-m) * 1.3);
+    color: var(--gris-oscuro);
+    margin-bottom: 20px;
+    font-weight: var(--font-wight-bold);
+}
+
+.problem-content p {
+    font-size: var(--font-size-m);
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* El botón solicitado para los artículos */
+.btn-problem {
+    display: inline-block;
+    padding: 10px 28px;
+    background-color: var(--verde-2);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: var(--font-wight-medium);
+    border-radius: var(--border-radius-m);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(44, 90, 69, 0.2);
+}
+
+.btn-problem:hover {
+    background-color: var(--verde-1);
+    color: var(--blanco);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.problem-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--border-radius-m);
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+.marina.problems {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 992px) {
+    /* Apila todos los artículos en vertical en su orden natural (Texto arriba, Imagen abajo) */
+    .problems {
+        flex-direction: column; 
+        gap: 35px;
+        margin-bottom: 70px;
+    }
+    
+    /* Forzamos a que la marina también siga el orden vertical natural */
+    .marina.problems {
+        flex-direction: column; 
+    }
+
+    .problem-image img {
+        height: 280px; /* Altura controlada para celulares */
+    }
+
+    .section-problems, .section-programs-wrapper {
+        padding: 60px 20px;
+    }
+}
+
+/* =======================================================
+   SECCIÓN PROGRAMAS (Cards en Fila, Fondos de Color y Bordes de Gradiente)
+   ======================================================= */
+.section-programs-wrapper {
+    background-color: #f4f7f5; /* Mantiene el fondo grisáceo general de tu main */
+    padding: 100px 40px;
+}
+
+.programs-container {
+    max-width: var(--site-max-width);
+    margin: 0 auto;
+    display: grid;
+    /* Fuerza a que los 3 elementos estén en la misma fila en escritorio */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* Estructura base de la tarjeta (crea el efecto de borde con degradado) */
+.program-card {
+    position: relative;
+    border-radius: var(--border-radius-m); 
+    padding: 5px; /* Aumentado a 5px para que el borde sea bien notorio */
+    
+    /* Degradado de súper contraste: Verde brillante, Turquesa eléctrico y Blanco destello */
+    background: linear-gradient(45deg, #20ca9a, #27b7be, #076d48, #138967); 
+    background-size: 300% 300%; 
+    
+    /* Animación continua */
+    animation: color 1.5s ease-in-out infinite; /* Un poco más rápida (8s) para que se note el movimiento */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* Efecto hover: el borde se mueve ligeramente y la tarjeta sube */
+.program-card:hover {
+    transform: translateY(-12px); 
+    animation: color 3s linear infinite; /* En hover gira rápido y continuo */
+    
+    /* Un destello de neón que calca los colores del borde */
+    box-shadow: 0 0 25px rgba(39, 183, 190, 0.6), 0 0 50px rgba(32, 202, 154, 0.3); 
+}
+
+/* Contenedor interno: Define el color de fondo de cada tarjeta (No blanco) */
+.card-inner {
+    height: 100%;
+    border-radius: calc(var(--border-radius-m) - 5px); /* Ajuste perfecto al nuevo grosor */
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* Colores personalizados combinables y únicos para cada tarjeta */
+.card-inner {
+    background-color: #1b1c1b; /* Negro con un toque de verde pino */
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+
+/* Diseño de las Imágenes dentro de las Cards */
+.card-image-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: var(--border-radius-s); /* Esquinas suavizadas para la foto */
+    margin-bottom: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la foto sin deformarla */
+    transition: transform 0.4s ease;
+}
+
+.program-card:hover .card-img {
+    transform: scale(1.08); /* Pequeño zoom en la foto al pasar el mouse */
+}
+
+/* Textos dentro de las tarjetas */
+.program-card h3 {
+    font-size: var(--font-size-m);
+    color: var(--blanco); /* Forzado a blanco para contrastar con los fondos oscuros */
+    margin-bottom: 12px;
+    font-weight: var(--font-wight-semibold);
+}
+
+.program-card p {
+    font-size: var(--font-size-s);
+    color: #cedad4; /* Gris claro/verdoso suave para lectura descansada */
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Botones adaptados al estilo oscuro */
+.btn-card {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid var(--verde-3);
+    color: var(--verde-3);
+    text-decoration: none;
+    border-radius: var(--border-radius-m);
+    font-weight: var(--font-wight-medium);
+    transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+    background-color: var(--verde-3);
+    color: var(--negro);
+    text-decoration: none;
+    box-shadow: 0 0 15px var(--verde-3);
+}
+
+/* =======================================================
+   OPTIMIZACIÓN RESPONSIVE
+   ======================================================= */
+@media (max-width: 992px) {
+    .programs-container {
+        /* En tablets se ponen de a 2 o 1 columna automáticamente si no entran */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+/* =======================================================
+   SECCIÓN COMO AYUDAR (Cierre antes del footer)
+   ======================================================= */
+.section-help {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.help-content h2 {
+    font-size: var(--font-size-xl);
+    color: var(--gris-oscuro);
+    margin-bottom: 15px;
+}
+
+.help-content p {
+    font-size: var(--font-size-m);
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* =======================================================
+   MEDIA QUERY (Optimización Móvil)
+   ======================================================= */
+@media (max-width: 992px) {
+    .problems {
+        flex-direction: column; /* Apila imagen debajo de texto */
+        gap: 35px;
+        margin-bottom: 70px;
+    }
+    
+    .problem-image img {
+        height: 280px;
+    }
+
+    .section-problems, .section-programs-wrapper {
+        padding: 60px 20px;
+    }
+}
+
+
+
+/* Footer */
+footer {
+    width: 98.35%;
+    position: relative; /* Corregido: 'flex' no es un valor válido para position, lo ideal es relative o block */
+    bottom: 0;
+    background: linear-gradient(45deg, #080808da, #121514, #3a3e3e);
+    background-size: 300% 300%;
+    border-radius: var(--border-radius-m);
+    color: var(--blanco);
+    padding: 50px 20px;
+    margin: 10px 15px;
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+.footer-logo {
+    width: 100%; /* Ajustado para que responda al contenedor de la columna */
+    max-width: 300px;
+    height: auto;     
+}
+
+.footer-wrap { /* Cambiado de .container */
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-wrap h3::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.footer-wrap li a:hover {
+    color: var(--verde-3);
+    transition: all 0.5s ease;
+}
+
+.footer-col-1 { /* Cambiado de .col-1 */
+    flex-basis: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1 p {
+    color: inherit;
+    font-size: 15px;
+    line-height: 20px;
+    padding-top: 15px;
+}
+
+.footer-col-2 { /* Cambiado de .col-2 */
+    flex-basis: 15%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-col-2 h3 {
+    color: var(--blanco);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-col-2 ul {
+    list-style: none;
+}
+
+.footer-col-2 ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col-2 ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer-col-3 { /* Cambiado de .col-3 */
+    flex-basis: 15%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-col-3 h3 {
+    color: var(--blanco);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-col-3 ul {
+    list-style: none;
+}
+
+.footer-col-3 ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col-3 ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer-col-4 { /* Cambiado de .col-4 */
+    flex-basis: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-col-4 h3 {
+    color: var(--blanco);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+form .far {
+    color: #ccc;
+    margin-right: 10px;
+}
+
+form input {
+    background: transparent;
+    width: 100%;
+    border: none;
+    color: var(--blanco);
+    outline: none;
+}
+
+form button {
+    background: transparent;
+    border: none;
+    color: var(--blanco);
+    cursor: pointer;
+    outline: none;
+}
+
+.social-icons {
+    margin-top: 60px;
+    display: flex;
+}
+
+.social-icons a {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: var(--blanco);
+    color: var(--gris-oscuro);
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.social-icons a:hover {
+    background: var(--verde-3);
+    color: var(--blanco);
+    transition: all 0.5s ease;
+}
+
+.footer-2 {
+    width: 100%;
+    color: var(--blanco);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-col-2 ul, 
+.footer-col-3 ul {
+    padding-left: 0;
+    margin-left: 0;
+}
