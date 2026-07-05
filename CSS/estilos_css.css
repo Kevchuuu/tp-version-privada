@@ -1011,7 +1011,7 @@ footer {
     text-decoration: none;
 }
 
-.footer-col-3 { /* Cambiado de .col-3 */
+.footer-col-3 { /* Cambiado de .col-2 */
     flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
@@ -1036,13 +1036,38 @@ footer {
     text-decoration: none;
 }
 
-.footer-col-4 { /* Cambiado de .col-4 */
-    flex-basis: 20%;
+.footer-col-4 { /* Cambiado de .col-3 */
+    flex-basis: 15%;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 .footer-col-4 h3 {
+    color: var(--blanco);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-col-4 ul {
+    list-style: none;
+}
+
+.footer-col-4 ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col-4 ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer-col-5 { /* Cambiado de .col-4 */
+    flex-basis: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-col-5 h3 {
     color: var(--blanco);
     font-size: 20px;
     margin-bottom: 15px;
@@ -1113,7 +1138,7 @@ form button {
 }
 
 .footer-col-2 ul, 
-.footer-col-3 ul {
+.footer-col-3 ul, .footer-col-4 ul {
     padding-left: 0;
     margin-left: 0;
 }
