@@ -51,6 +51,30 @@ body{
     --site-max-width: 1300px;
 }
 
+/*dark-mode*/
+
+
+.dark-mode .section-middle,
+.dark-mode .section-problems,
+.dark-mode .section-programs-wrapper,
+.dark-mode .section-help{
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.btn-dark-mode{
+    background-color: var(--verde-1);
+    color: var(--blanco);
+    padding: 10px;
+    border-radius: var(--border-radius-m);
+    font-size: var(--font-size-n);
+    transition: .3s;
+}
+
+.btn-dark-mode:hover{
+    background-color: var(--verde-3);
+}
+
 /* logo barra de navegación */
 .logo{
     max-height: 4rem; 
