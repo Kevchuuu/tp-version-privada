@@ -370,14 +370,20 @@ header .main-nav {
     }
 }
 
+.contact-hero{
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/vecteezy_ai-generated-curved-metallic-structures-with-dynamic_38814222.jpeg) no-repeat center center / cover;
+}
+
+.nosotros-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/colleagues-giving-fist-bump.jpg) no-repeat center center / cover;
+}
+
 /* =======================================================
-   HERO COMPARTIDO: IMAGEN DE FONDO + FILTRO CINEMÁTICO
+            HERO COMPARTIDO
    ======================================================= */
 .hero-inner-page {
     width: 100%;
     min-height: 40vh; /* Le damos un poquito más de altura para que luzca la foto */
-    background: url(../img/paisajes/vecteezy_jungle-and-mountains-natural-background_28621316.jpg); 
-    background-size: cover;
     background-attachment: fixed; /* Esto aplica un efecto parallax sutil al scrollear (opcional) */
     display: flex;
     justify-content: center;
@@ -393,9 +399,9 @@ header .main-nav {
     text-align: center;
 }
 
-/* Título con texto degradado metalizado */
+/* Título */
 .hero-inner-page .inner-title-gradient {
-    font-size: calc(var(--font-size-xxl) * 0.9);
+    font-size: var(--font-size-xxl);
     font-weight: var(--font-wight-bold);
     color: var(--blanco);
     margin-bottom: 16px;
@@ -473,7 +479,7 @@ main{
    SECCIÓN DE ACCIÓN (Contenido centrado y elegante)
    ======================================================= */
 .section-middle {
-    background-color: #f4f7f5; /* Un fondo blanco-verdoso ecológico muy sutil */
+    background-color: #d5ffe5; /* Un fondo blanco-verdoso ecológico muy sutil */
     padding: 90px 20px;
     display: flex;
     justify-content: center;
@@ -590,131 +596,467 @@ main{
     }
 }
 
-/* =======================================================
-   SECCIÓN PROGRAMAS (Cards en Fila, Fondos de Color y Bordes de Gradiente)
-   ======================================================= */
+/*=============== SECCIÓN PROGRAMAS (VERTICAL / RESPONSIVE EN TODO DISPOSITIVO) ===============*/
 .section-programs-wrapper {
-    background-color: #f4f7f5; /* Mantiene el fondo grisáceo general de tu main */
-    padding: 100px 40px;
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+  background-color: var(--gris-oscuro);
+  margin: 0;
 }
 
-.programs-container {
-    max-width: var(--site-max-width);
-    margin: 0 auto;
-    display: grid;
-    /* Fuerza a que los 3 elementos estén en la misma fila en escritorio */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
+.section-title {
+  font-size: var(--font-size-xl, 2rem);
+  color: var(--blanco);
+  margin-bottom: 3.5rem;
+  text-align: center;
+  font-weight: 700;
 }
 
-/* Estructura base de la tarjeta (crea el efecto de borde con degradado) */
-.program-card {
+.card__container {
+  display: grid;
+  /* Escritorio: 3 columnas. En pantallas medianas pasa a 2 y en celulares a 1 sola de forma automática */
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 4rem 2rem;
+  width: 100%;
+  max-width: var(--site-max-width, 1120px);
+  justify-content: center;
+  filter: drop-shadow(5px 5px 10px black);
+}
+
+.card__article {
+  position: relative;
+  overflow: hidden; /* Esconde el texto inicialmente */
+  justify-self: center;
+  width: 100%;
+  max-width: 348px;
+  border-radius: 1.5rem;
+}
+
+/* Imagen en formato vertical (Portrait) constante en cualquier resolución */
+.card__img {
+  width: 100%;
+  height: 550px; /* Alto vertical optimizado */
+  object-fit: cover;
+  border-radius: 1.5rem;
+  transition: transform .4s ease;
+}
+
+/* Caja de datos flotante inteligente (Usa porcentajes, no valores fijos) */
+.card__data {
+  width: calc(100% - 3rem);
+  background-color: var(--container-color, #fff);
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: 1.5rem; /* Se posiciona con respecto al fondo de la tarjeta */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  /* La empujamos hacia abajo un 70% de su propia altura para ocultarla de forma elástica */
+  transform: translateY(70%); 
+  transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1), opacity .4s ease;
+}
+
+.card__description {
+  display: block;
+  font-size: var(--small-font-size, .813rem);
+  color: var(--verde-3, #20ca9a);
+  font-weight: 500;
+  margin-bottom: .25rem;
+}
+
+.card__title {
+  font-size: var(--h2-font-size, 1.25rem);
+  font-weight: 600;
+  color: var(--title-color, hsl(0, 0%, 15%));
+  margin-bottom: .5rem;
+}
+
+.card__text {
+  font-size: var(--small-font-size, .813rem);
+  color: var(--text-color, hsl(0, 0%, 35%));
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.card__button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: var(--small-font-size, .813rem);
+  font-weight: 500;
+  color: var(--verde-2, #3a7d5c);
+  transition: color .3s;
+}
+
+.card__button:hover {
+  text-decoration: underline;
+  color: var(--verde-1, #2c5a45);
+}
+
+/*=============== INTERACCIONES HOVER (MÉTODO ULTRA RESPONSIVE) ===============*/
+
+/* Al pasar el mouse, permitimos que la caja sobresalga de la tarjeta si es necesario */
+.card__article:hover {
+  overflow: initial;
+}
+
+/* Al sacar el mouse, esperamos que baje la tarjeta antes de ocultar el overflow */
+.card__article:not(:hover) {
+  transition-delay: .3s;
+  overflow: hidden;
+}
+
+/* Efecto hover sobre la data: sube limpiamente a su posición natural */
+.card__article:hover .card__data {
+  opacity: 1;
+  transform: translateY(0); /* Sube exactamente lo necesario sin importar cuántas líneas tenga el texto */
+}
+
+/* Ligero zoom a la foto vertical de fondo para darle vida */
+.card__article:hover .card__img {
+  transform: scale(1.03);
+}
+
+/*=============== DETALLES EXCLUSIVOS MÓVIL ===============*/
+@media screen and (max-width: 768px) {
+  .section-programs-wrapper {
+    padding-block: 3rem;
+  }
+  .card__container {
+    grid-template-columns: 1fr; /* Una sola columna: se apilan verticalmente perfectas */
+    gap: 5rem 0; /* Espaciado saludable entre tarjetas apiladas */
+  }
+  .card__article {
+    max-width: 100%; /* Aprovecha bien el ancho del celular */
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .section-programs-wrapper { margin-inline: 1rem; }
+  .card__data { padding: 1.2rem 1rem; width: calc(100% - 2rem); }
+  .card__img { height: 380px; } /* Un toque más bajas en pantallas diminutas */
+}
+
+/* =======================================================
+   NUEVA SECCIÓN: LÍNEA DE TIEMPO VERTICAL (TIMELINE)
+   ======================================================= */
+.timeline-section {
+    padding: 80px 20px;
+    background-color: #fdfdfd;
+}
+
+.timeline-container {
     position: relative;
-    border-radius: var(--border-radius-m); 
-    padding: 5px; /* Aumentado a 5px para que el borde sea bien notorio */
-    
-    /* Degradado de súper contraste: Verde brillante, Turquesa eléctrico y Blanco destello */
-    background: linear-gradient(45deg, #20ca9a, #27b7be, #076d48, #138967); 
-    background-size: 300% 300%; 
-    
-    /* Animación continua */
-    animation: color 1.5s ease-in-out infinite; /* Un poco más rápida (8s) para que se note el movimiento */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-}
-
-/* Efecto hover: el borde se mueve ligeramente y la tarjeta sube */
-.program-card:hover {
-    transform: translateY(-12px); 
-    animation: color 3s linear infinite; /* En hover gira rápido y continuo */
-    
-    /* Un destello de neón que calca los colores del borde */
-    box-shadow: 0 0 25px rgba(39, 183, 190, 0.6), 0 0 50px rgba(32, 202, 154, 0.3); 
-}
-
-/* Contenedor interno: Define el color de fondo de cada tarjeta (No blanco) */
-.card-inner {
-    height: 100%;
-    border-radius: calc(var(--border-radius-m) - 5px); /* Ajuste perfecto al nuevo grosor */
-    padding: 35px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-}
-
-/* Colores personalizados combinables y únicos para cada tarjeta */
-.card-inner {
-    background-color: #1b1c1b; /* Negro con un toque de verde pino */
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
     filter: drop-shadow(5px 5px 10px black);
 }
 
-
-/* Diseño de las Imágenes dentro de las Cards */
-.card-image-wrapper {
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    border-radius: var(--border-radius-s); /* Esquinas suavizadas para la foto */
-    margin-bottom: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+/* La línea central vertical */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--verde-1);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
 }
 
-.card-img {
+/* Contenedores de los hitos */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+/* Los puntos en la línea central */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #ffffff;
+    border: 4px solid var(--verde-2);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+/* Posicionamiento Izquierda y Derecha */
+.timeline-left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Corregir los puntos para los bloques de la derecha */
+.timeline-right .timeline-dot {
+    left: -10px;
+}
+
+/* Los bloques con las fechas flotantes */
+.timeline-date {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--verde-2);
+    margin-bottom: 8px;
+}
+
+/* Caja de contenido interno */
+.timeline-content {
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--verde-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content h3 {
+    font-size: var(--font-size-m);
+    color: var(--verde-2);
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: var(--font-size-s);
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Espacio controlado para las futuras fotos de la línea de tiempo */
+.timeline-img-placeholder {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 180px;
+}
+
+.timeline-img-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la foto sin deformarla */
-    transition: transform 0.4s ease;
+    object-fit: cover;
 }
 
-.program-card:hover .card-img {
-    transform: scale(1.08); /* Pequeño zoom en la foto al pasar el mouse */
+/* Efectos Hover Interactivos */
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(44, 90, 69, 0.15);
 }
 
-/* Textos dentro de las tarjetas */
-.program-card h3 {
-    font-size: var(--font-size-m);
-    color: var(--blanco); /* Forzado a blanco para contrastar con los fondos oscuros */
-    margin-bottom: 12px;
-    font-weight: var(--font-wight-semibold);
-}
-
-.program-card p {
-    font-size: var(--font-size-s);
-    color: #cedad4; /* Gris claro/verdoso suave para lectura descansada */
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Botones adaptados al estilo oscuro */
-.btn-card {
-    display: inline-block;
-    padding: 10px 24px;
-    border: 2px solid var(--verde-3);
-    color: var(--verde-3);
-    text-decoration: none;
-    border-radius: var(--border-radius-m);
-    font-weight: var(--font-wight-medium);
-    transition: all 0.3s ease;
-}
-
-.btn-card:hover {
+.timeline-item:hover .timeline-dot {
     background-color: var(--verde-3);
-    color: var(--negro);
-    text-decoration: none;
-    box-shadow: 0 0 15px var(--verde-3);
+}
+
+/* RESPONSIVE: Transforma la línea de tiempo a una sola columna en celulares */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+        text-align: left;
+    }
+    
+    .timeline-left {
+        left: 0;
+    }
+    
+    .timeline-right {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 21px !important;
+        right: auto;
+    }
 }
 
 /* =======================================================
-   OPTIMIZACIÓN RESPONSIVE
+   NUEVA SECCIÓN: TARJETAS DE PILARES (MODERN GRID CARDS)
    ======================================================= */
-@media (max-width: 992px) {
-    .programs-container {
-        /* En tablets se ponen de a 2 o 1 columna automáticamente si no entran */
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
+.gris{
+    color: var(--gris-oscuro);
 }
+
+.pilares-section {
+    padding: 80px 20px;
+    background-color: #d5ffe5;
+    margin-bottom: 50px;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+}
+
+.pilar-card {
+    position: relative;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1;
+    filter: drop-shadow(5px 5px 10px black);
+}
+
+/* Decoración superior con tu color de acento brillante */
+.pilar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--verde-1), var(--verde-3));
+}
+
+/* Badge numérico elegante */
+.pilar-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-bold);
+    color: var(--verde-1);
+    opacity: 0.7;
+}
+
+/* Icono redondo contenedor */
+.pilar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background-color: rgba(72, 161, 121, 0.1);
+    color: var(--verde-2);
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.pilar-card h3 {
+    font-size: var(--font-size-m);
+    color: var(--verde-2);
+    margin-bottom: 15px;
+}
+
+.pilar-card p {
+    font-size: var(--font-size-s);
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Capa de imagen oculta que se revela con transiciones finas */
+.pilar-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 0.4s ease;
+}
+
+.pilar-bg-image::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(44, 90, 69, 0.95), rgba(44, 90, 69, 0.8));
+    top: 0;
+    left: 0;
+}
+
+.pilar-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* COMPORTAMIENTO INTERACTIVO HOVER */
+.pilar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(44, 90, 69, 0.2);
+}
+
+/* Cuando pases el mouse, cambiamos las propiedades de los textos para legibilidad sobre foto */
+.pilar-card:hover h3, 
+.pilar-card:hover p,
+.pilar-card:hover .pilar-badge {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.pilar-card:hover .pilar-icon {
+    background-color: var(--verde-3);
+    color: var(--verde-2);
+    transform: rotate(-5deg) scale(1.05);
+}
+
+/* Mostramos la imagen de fondo de manera fluida */
+.pilar-card:hover .pilar-bg-image {
+    opacity: 1;
+    transform: scale(1);
+}
+/*=============== AGREGADOS EXCLUSIVOS PARA LA SECCIÓN EQUIPO ===============*/
+
+/* Contenedor de las redes sociales */
+.card__socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #e2e8f0; /* Una línea sutil divisoria arriba de los links */
+  padding-top: 0.75rem;
+}
+
+/* Estilo para los links de GitHub y LinkedIn */
+.social-link {
+  font-size: var(--small-font-size, .813rem);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--verde-2, #3a7d5c);
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--verde-3, #20ca9a); /* Brilla con tu color destacado al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Ajuste opcional por si el nombre de la persona queda muy grande */
+.user-name {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
 /* =======================================================
    SECCIÓN COMO AYUDAR (Cierre antes del footer)
    ======================================================= */
@@ -835,8 +1177,7 @@ main{
 
 /* Botón de envío que hereda el estilo EcoRaíz */
 .btn-submit-form {
-    width: 40%;
-    margin-left: 30%;
+    width: 100%;
     padding: 15px;
     background-color: var(--verde-2);
     color: var(--blanco);
@@ -1142,3 +1483,7 @@ form button {
     padding-left: 0;
     margin-left: 0;
 }
+
+
+
+
