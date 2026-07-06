@@ -370,17 +370,6 @@ header .main-nav {
     }
 }
 
-.contact-hero{
-   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/vecteezy_ai-generated-curved-metallic-structures-with-dynamic_38814222.jpeg) no-repeat center center / cover;
-}
-
-.nosotros-hero{
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/colleagues-giving-fist-bump.jpg) no-repeat center center / cover;
-}
-
-.energias-hero{
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/wind-turbines-field-wind-power-station-evening-sky.jpg) no-repeat center center / cover;
-}
 
 /* =======================================================
             HERO COMPARTIDO
@@ -456,6 +445,25 @@ main{
     background-color: #f4f7f5;
 }
 
+.contact-hero{
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/vecteezy_ai-generated-curved-metallic-structures-with-dynamic_38814222.jpeg) no-repeat center center / cover;
+}
+
+.nosotros-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/colleagues-giving-fist-bump.jpg) no-repeat center center / cover;
+}
+
+.energias-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/wind-turbines-field-wind-power-station-evening-sky.jpg) no-repeat center center / cover;
+}
+
+.conservacion-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../img/hero/vecteezy_jungle-and-mountains-natural-background_28621316.jpg) no-repeat center center / cover;
+}
+
+.educacion-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../img/hero/view-diverse-adolescents-practicing-health-wellness-activities-themselves-their-community.jpg) no-repeat center center / cover;
+}
 
 /* =======================================================
    REGLAS GENERALES COMPARTIDAS

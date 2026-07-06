@@ -1,4 +1,4 @@
-<DOCTYPE hmtl>
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <title>EcoRaíz</title>
+        <title>Educación Ambiental - EcoRaíz</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="./CSS/estilos_css.css">
@@ -46,48 +46,138 @@
         </header>
 
         <main>
-            <h2>Educación Ambiental - Concientizando sobre nuestros pasos</h2>
-            <section id="presentación">
-                <img src="" alt="" height="" width="">
-                <p>Ser concientes de la contaminación que generamos en el día a día puede ayudarnos en muchos aspectos. En la actualidad <br>
-                    Muchas herramientas que usamos al transcurrir el día son fuentes de contaminación, unas mas graves que otras. Al saber cuales son y <br>
-                    que tipo de contaminación generan nos ayuda a saber buscar alternativas o como reducir sus generación de contaminación, permitiendo tener un <br>
-                    ambiente mas optimo y saludable.
-                </p>
+            <!-- HERO CON FILTRO OSCURO OPTIMIZADO -->
+            <section class="hero-inner-page educacion-hero">
+                <div class="hero-inner-content">
+                    <h1 class="inner-title-gradient">Educación Ambiental</h1>
+                    <p class="inner-subtitle">Sembrando conciencia colectiva a través de la teoría, la práctica en el territorio y la tecnología.</p>
+                </div>
             </section>
 
-            <section id="descripcion">
-                <br>
-                <img src="" alt="" height="" widht="">
-                <h3><strong>¿Cual es el objetivo de este programa?</strong></h3>
-                <p>Este programa busca <strong>generar conciencia sobre el cuidado del medio ambiente a través de talleres, charlas y actividades educativas.</strong> Se trabajan temas como reciclaje, consumo responsable, cambio climático y biodiversidad.</p>
+            <!-- PRESENTACIÓN (Sección de Introducción Estilizada) -->
+            <section class="section-intro section-middle" id="presentacion">
+                <div class="section-content-action">
+                    <h2 class="section-title">Concientizando sobre nuestros pasos</h2>
+                    <p>Comprender el impacto ambiental de nuestras actividades diarias es el primer paso hacia una transformación real. Muchas de las herramientas y hábitos que asumimos como cotidianos generan focos de contaminación severos. Identificarlos nos dota de la capacidad de proponer alternativas sustentables, optimizando nuestro entorno y promoviendo comunidades mucho más saludables en nuestros barrios.</p>
+                </div>
+            </section>
+                
+            <!-- DETALLES DEL PROGRAMA (Estructura de grilla alternada .problems y .marina) -->
+            <section class="section-problems" id="descripcion">
+                <div class="problems">
+                    <div class="problem-content">
+                        <h3>¿Cuál es el objetivo de este programa?</h3>
+                        <p>Buscamos <strong>generar una sólida cultura ecológica activa</strong> a través de metodologías dinámicas como los <em>Talleres de Siembra Ceibo</em>, dinámicas en viveros comunitarios y proyectos formativos integrados. Abordamos de forma directa temas críticos como el consumo responsable, el compostaje urbano, la crisis climática global y la preservación de la biodiversidad nativa.</p>
+                    </div>
+                    <div class="problem-image">
+                        <!-- Imagen de la escuela de siembra comunitaria en el vivero -->
+                        <img src="watermarked_img_16574325512315173488.png" alt="Taller de Siembra Ceibo EcoRaíz en el vivero comunitario" onerror="this.style.display='none'">
+                    </div>
+                </div>
+
+                <div class="marina problems" id="dirigido">
+                    <div class="problem-content">
+                        <h3>¿A quién está Dirigido?</h3>
+                        <p>Nuestra propuesta está pensada de manera transversal: articulamos directamente con <strong>estudiantes y docentes de escuelas de nivel primario y secundario</strong>, y diseñamos espacios formativos abiertos para vecinos, familias y asambleas barriales que deseen transformarse en promotores ambientales activos de su propio entorno.</p>
+                    </div>
+                    <div class="problem-image">
+                        <!-- Imagen de la capacitación escolar interactiva con prototipos didácticos -->
+                        <img src="watermarked_img_15372439269477013894.png" alt="Capacitación y charla ambiental lúdica de EcoRaíz" onerror="this.style.display='none'">
+                    </div>
+                </div>
             </section>
 
-            <section id="Dirigido">
-                <br>
-                <h3><strong>¿A Quien Está Dirigido?</strong></h3>
-                <img src="/Imagenes TLMW/señora_explicando.jpeg" alt="personal dando charla en escuela primaria" height="" width="">
-                <p>Está orientado a <strong>estudiantes de nivel primario y secundario, docentes, y público en general</strong> interesado en aprender sobre el impacto ambiental.</p>
+            <!-- COMO PARTICIPAR (Utilizando tus Modern Grid Cards) -->
+            <section class="pilares-section" id="Participar">
+                <h2 class="section-title">¿Cómo podés participar?</h2>
+                
+                <div class="pilares-grid">
+                    <!-- Opción 1 -->
+                    <div class="pilar-card">
+                        <div class="pilar-badge">Acción 01</div>
+                        <div class="pilar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 10 3 3 3-3"/><path d="M12 22V10"/><path d="M12 2a5 5 0 0 0-5 5v3h10V7a5 5 0 0 0-5-5z"/></svg>
+                        </div>
+                        <h3>Asistí a los Talleres</h3>
+                        <p>Sumate de forma gratuita a nuestros encuentros prácticos en el vivero escuela y aprendé técnicas avanzadas de cultivo nativo, siembra y compostaje urbano.</p>
+                        <div class="pilar-bg-image">
+                            <img src="watermarked_img_16574325512315173488.png" alt="Talleres de cultivo EcoRaíz" onerror="this.parentNode.style.display='none'">
+                        </div>
+                    </div>
+
+                    <!-- Opción 2 -->
+                    <div class="pilar-card">
+                        <div class="pilar-badge">Acción 02</div>
+                        <div class="pilar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                        </div>
+                        <h3>Solicitá Charlas</h3>
+                        <p>Llevamos nuestros programas pedagógicos, juegos educativos y módulos interactivos de reciclado directamente a tu institución o escuela.</p>
+                        <div class="pilar-bg-image">
+                            <img src="watermarked_img_15372439269477013894.png" alt="Pedagogía ecológica interactiva" onerror="this.parentNode.style.display='none'">
+                        </div>
+                    </div>
+
+                    <!-- Opción 3 -->
+                    <div class="pilar-card">
+                        <div class="pilar-badge">Acción 03</div>
+                        <div class="pilar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Sumate como Educador</h3>
+                        <p>Incorporate a nuestra red de voluntarios y convertite en facilitador ambiental, planificando proyectos ecológicos y guiando jornadas comunitarias.</p>
+                        <div class="pilar-bg-image">
+                            <img src="watermarked_img_7265087599912443045.png" alt="Planificación comunitaria y educación" onerror="this.parentNode.style.display='none'">
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section id="Participar">
-                <br>
-                <h3>¿Como Puedo Participar?</h3>
-                Se puede participar
-                <ul>
-                    <li>Asistiendo a los talleres.</li>
-                    <li>solicitando charlas para instituciones educativas</li>
-                    <li>sumándose como voluntario para facilitar actividades educativas.</li>
-                </ul>
+            <!-- OTROS PROGRAMAS (Tarjetas flotantes para navegación cruzada) -->
+            <section id="Programas" class="section-programs-wrapper">
+                <h2 class="section-title">Otros programas para explorar</h2>
+       
+                <div class="card__container">
+                    <!-- Tarjeta 1: Energías Limpias -->
+                    <article class="card__article">
+                        <img src="./img/programas/futuristic-solar-power-station-generates-clean-electricity-generated-by-ai.jpg" alt="Paneles solares comunitarios" class="card__img">
+                        <div class="card__data">
+                            <span class="card__description">Sustentabilidad</span>
+                            <h2 class="card__title">Energías limpias</h2>
+                            <p class="card__text">Promovemos la transición energética e instalaciones comunitarias de equipos solares térmicos.</p>
+                            <a href="./programas.html" class="card__button">Ver programa</a>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 2: Conservación de Ecosistemas -->
+                    <article class="card__article">
+                        <img src="img/programas/vertical-shot-moreno-glacier-santa-cruz-argentina.jpg" alt="Conservación ambiental en plazas" class="card__img">
+                        <div class="card__data">
+                            <span class="card__description">Reforestación</span>
+                            <h2 class="card__title">Conservación de ecosistemas</h2>
+                            <p class="card__text">Restauramos el suelo urbano, recuperamos la biodiversidad nativa y reconectamos a la comunidad.</p>
+                            <a href="./conservacion-ecosistema-programa.html" class="card__button">Ver programa</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Sección de ayuda directa -->
+            <section id="ComoAyudar" class="section-help">
+                <div class="help-content">
+                    <h2 class="section-title gris">¿Querés ser parte del cambio?</h2>
+                    <p>Sumate a nuestras reforestaciones de fin de semana, difundí nuestras acciones colectivas o postulate para coordinar un equipo local.</p>
+                    <a href="contactos.html" class="btn-problem">Quiero sumarme hoy</a>
+                </div>
             </section>
         </main>
 
-      <!-- Pie de la Pagina -->
+        <!-- Pie de la Pagina -->
         <footer>
             <div class="footer-wrap"> 
                 <div class="footer-col-1"> 
                     <img src="img/logo/green-tree-ver-2.png" class="footer-logo" alt="Logo de EcoRaíz">
-                    <p>Seguí nuestras redes sociales para ver mas de nuestros contenidos y publicaciones.</p>
+                    <p>Seguí nuestras redes sociales para ver más de nuestros contenidos y publicaciones.</p>
                 </div>
                 <div class="footer-col-2"> <h3>Contenidos</h3>
                     <ul>
@@ -101,7 +191,7 @@
                     <ul>
                         <li><a href="./programas.html">Energías limpias</a></li>
                         <li><a href="./conservacion-ecosistema-programa.html">Cuidado de ecosistemas</a></li>
-                        <li><a href="./reforestacion-programa.html">Educación ambiental</a></li>
+                        <li><a href="./Educacion-ambiental-programa.html">Educación ambiental</a></li>
                     </ul>
                 </div>
 
@@ -109,10 +199,9 @@
                     <ul>
                         <li><a href="tel:+541123473476">+541123473476</a></li>
                         <li><a href="mailto:info@manos-verdes.org">info@manos-verdes.org</a></li>
-                        <li><address>Av.castillo del papa 353, Buenos Aires, Argentina</address></li>
+                        <li><address>Av. Castillo del Papa 353, Buenos Aires, Argentina</address></li>
                     </ul>
                 </div>
-
 
                 <div class="footer-col-5"> <h3>Escribinos</h3>
                     <form>
