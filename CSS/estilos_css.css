@@ -402,13 +402,16 @@ header .main-nav {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/colleagues-giving-fist-bump.jpg) no-repeat center center / cover;
 }
 
+.energias-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/hero/wind-turbines-field-wind-power-station-evening-sky.jpg) no-repeat center center / cover;
+}
+
 /* =======================================================
             HERO COMPARTIDO
    ======================================================= */
 .hero-inner-page {
     width: 100%;
     min-height: 40vh; /* Le damos un poquito más de altura para que luzca la foto */
-    background-attachment: fixed; /* Esto aplica un efecto parallax sutil al scrollear (opcional) */
     display: flex;
     justify-content: center;
     align-items: center;
